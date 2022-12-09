@@ -1,0 +1,26 @@
+//PALETA DE COLORES
+$palette : (
+    'white': #fff,
+    'black': #050505,
+    'primary': #488AF7,
+    'grey': #352f2f,
+    'grey-light': #5e5d5d,
+    'white-light': #b9b8b8,
+    'dark-mode': #161B22,
+    'dark-mode-secondary': #0D1117
+);   
+
+//BREAKPOINTS
+
+$breakpoints: (
+    'desktop': 1440px,
+    'desktop-small': 1280px,
+    'ipad-grande': 992px,
+    'ipad-pequeña': 768px,
+    'celular': 576px
+);
+
+//OTROS
+
+$transition-duration: .3s;
+$limit-width: 1500px;

@@ -1,0 +1,19 @@
+body{
+    &::-webkit-scrollbar-thumb {
+        background: color('primary');
+        @include transition($tp: background-color);
+    }
+    &::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px grey;
+        background: rgba(255,255,255,0.8);
+    }
+    &::-webkit-scrollbar {
+        width: 8px;
+        height: 5px;
+    }
+}
+body.active {
+    &::-webkit-scrollbar-thumb {
+        background: color('dark-mode');
+    }
+}

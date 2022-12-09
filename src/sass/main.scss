@@ -1,3 +1,10 @@
-*{
-    background-color: red;
-}
+//GLOBAL STYLES
+
+//ABSTRACTS
+@import './abstracts/fonts',
+        './abstracts/restart',
+        './abstracts/config',
+        './abstracts/functions',
+        './abstracts/mixins';
+
+// @import './layaout/header';
