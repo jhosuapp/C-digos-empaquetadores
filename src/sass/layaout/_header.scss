@@ -26,13 +26,20 @@
         width: 20%;
     }
     nav{
-        width: 60%;
         @include flex;
+    }
+    &-content{
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        nav{
+            width: 80%;
+        }
     }
     &-block{
         @include flex($jc: flex-end);
-        gap: 20px;
         width: 20%;
+        gap: 20px;
     }
     nav ul{
         display: flex;
@@ -139,6 +146,46 @@
             }
         }
     }
+    //HAMBURGER
+    &-hamburguer{
+        display: none;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        width: 30px;
+        height: 20px;
+        position: relative;
+        div{
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: color('grey');
+            @include transition($td: .5s);
+            &:nth-child(2){
+                top: calc(50% - 1px);
+            }
+            &:last-child{
+                bottom: 0;
+            }
+        }
+        &.enable{
+            div{
+                &:first-child{
+                    transform: rotate(45deg);
+                    top: calc(50% - 1px);
+                }
+                &:nth-child(2){
+                    width: 0;
+                }
+                &:last-child{
+                    top: calc(50% - 1px);
+                    bottom: unset;
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+    }
     //DARK MODE
     body.active &{
         background-color: color('dark-mode');
@@ -170,6 +217,54 @@
             background-color: color('dark-mode-secondary');
             p {
                 color: color('white');
+            }
+        }
+    }
+}
+
+@media(max-width: breakpoint('ipad-grande')){
+    .header{
+        &-hamburguer{
+            display: flex;
+        }
+        &-logo{
+            position: relative;
+            z-index: 9;
+        }
+        &-content{
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            top: 0;
+            left: -100%;
+            @include flex;
+            background-color: color('white');
+            transition: .5s ease left;
+            flex-direction: column;
+            gap: 40px;
+            ul{
+                flex-direction: column;
+                text-align: center;
+            }
+            &.active{
+                left: 0;
+            }
+            nav{
+                width: 100%;
+            }
+        }
+        &-block{
+            width: 100%;
+            justify-content: center;
+        }
+        body.active &{
+            .header-content{
+                background-color: color('dark-mode-secondary');
+            }
+            .header-hamburguer{
+                div{
+                    background-color: color('white');
+                }
             }
         }
     }
