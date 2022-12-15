@@ -7,4 +7,10 @@
         './abstracts/functions',
         './abstracts/mixins';
 
-// @import './layaout/header';
+//LAYOUT
+@import './layout/header';
+
+//COMPONENTS
+@import './components/code',
+        './components/loader',
+        './components/containers';

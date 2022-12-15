@@ -1,5 +1,3 @@
-import '../../sass/layaout/_header.scss';
-import '../../sass/animations/_header.scss';
 import {useState} from 'react';
 //font awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
